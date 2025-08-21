@@ -1,0 +1,290 @@
+.user-view {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.user-view h2 {
+  font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+  color: #1d1d1f;
+  margin-bottom: 2rem;
+  text-align: center;
+  letter-spacing: -0.02em;
+}
+
+.view-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* Common card styling */
+.stats-card, 
+.heatmap-card, 
+.poi-cards, 
+.tour-cost, 
+.charging-stations, 
+.range-planning,
+.fuel-stations,
+.parking-options,
+.cycling-routes,
+.bike-friendly {
+  background-color: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+/* Add hover effects with light colors */
+.stats-card:hover, 
+.poi-cards:hover, 
+.charging-stations:hover,
+.fuel-stations:hover,
+.cycling-routes:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+}
+
+.commuter-view .stats-card:hover,
+.commuter-view .heatmap-card:hover {
+  background-color: #f0f7ff;
+}
+
+.tourist-view .poi-cards:hover,
+.tourist-view .tour-cost:hover {
+  background-color: #f7f0ff;
+}
+
+.ev-view .charging-stations:hover,
+.ev-view .range-planning:hover {
+  background-color: #f0fff5;
+}
+
+.car-view .fuel-stations:hover,
+.car-view .parking-options:hover {
+  background-color: #f0f0ff;
+}
+
+.bike-view .cycling-routes:hover,
+.bike-view .bike-friendly:hover {
+  background-color: #fffaf0;
+}
+
+.user-view h3 {
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: #1d1d1f;
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+.user-view h4 {
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: #1d1d1f;
+  margin: 0.5rem 0;
+}
+
+.user-view p {
+  color: #86868b;
+  margin: 0.25rem 0 1rem;
+  font-size: 0.95rem;
+}
+
+/* Commuter view */
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #f5f5f7;
+}
+
+.stat-item:last-child {
+  border-bottom: none;
+}
+
+.stat-label {
+  color: #86868b;
+}
+
+.stat-value {
+  font-weight: 500;
+  color: #1d1d1f;
+}
+
+.heatmap-placeholder {
+  height: 200px;
+  background: linear-gradient(45deg, #30d158, #ffcc00, #ff3b30);
+  border-radius: 12px;
+  position: relative;
+}
+
+.heatmap-legend {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  padding: 0.5rem;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.legend-item {
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+}
+
+.legend-item::before {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 4px;
+  border-radius: 50%;
+}
+
+.legend-item.low::before {
+  background-color: #30d158;
+}
+
+.legend-item.medium::before {
+  background-color: #ffcc00;
+}
+
+.legend-item.high::before {
+  background-color: #ff3b30;
+}
+
+/* Tourist view */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1rem;
+}
+
+.poi-card {
+  background-color: #f5f5f7;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.poi-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.poi-image {
+  height: 100px;
+  background-color: #e5e5ea;
+}
+
+.poi-card h4 {
+  margin: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.poi-card p {
+  margin: 0 0.5rem 0.5rem;
+  font-size: 0.8rem;
+}
+
+.tour-item, .cost-item {
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #f5f5f7;
+}
+
+.cost-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Driver view */
+.station-item, .parking-item, .route-item, .place-item {
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #f5f5f7;
+  transition: all 0.2s ease;
+}
+
+.station-item:hover, .parking-item:hover, .route-item:hover, .place-item:hover {
+  background-color: #fafafa;
+  padding-left: 0.5rem;
+  border-radius: 8px;
+}
+
+.range-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #30d158, #34c759);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  color: white;
+}
+
+.range-value {
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.range-unit {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+/* View-specific colors */
+.commuter-view h2 {
+  color: #2d7ffd;
+}
+
+.tourist-view h2 {
+  color: #8f41e9;
+}
+
+.ev-view h2 {
+  color: #30d158;
+}
+
+.car-view h2 {
+  color: #5e5ce6;
+}
+
+.bike-view h2 {
+  color: #ff9f0a;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .view-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .user-view h2 {
+    font-size: 1.75rem;
+  }
+}

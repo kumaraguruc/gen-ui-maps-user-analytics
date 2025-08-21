@@ -1,0 +1,171 @@
+.user-type-selection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.selection-title {
+  font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+  text-align: center;
+  color: #1d1d1f;
+  margin-bottom: 3rem;
+  letter-spacing: -0.02em;
+}
+
+.selection-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.selection-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue', sans-serif;
+}
+
+.selection-option:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  background-color: #fafafa;
+}
+
+.selection-option:active {
+  transform: scale(0.98);
+}
+
+.option-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  background: #f5f5f7;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.selection-option h3 {
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+  color: #1d1d1f;
+}
+
+.selection-option p {
+  font-weight: 400;
+  font-size: 1rem;
+  color: #86868b;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* User type specific styling */
+.commuter {
+  border-top: 4px solid #2d7ffd;
+}
+
+.commuter:hover {
+  background-color: #f0f7ff;
+}
+
+.tourist {
+  border-top: 4px solid #8f41e9;
+}
+
+.tourist:hover {
+  background-color: #f7f0ff;
+}
+
+.driver {
+  border-top: 4px solid #f54f7a;
+}
+
+.driver:hover {
+  background-color: #fff0f5;
+}
+
+/* Vehicle type specific styling */
+.ev {
+  border-top: 4px solid #30d158;
+}
+
+.ev:hover {
+  background-color: #f0fff5;
+}
+
+.car {
+  border-top: 4px solid #5e5ce6;
+}
+
+.car:hover {
+  background-color: #f0f0ff;
+}
+
+.bike {
+  border-top: 4px solid #ff9f0a;
+}
+
+.bike:hover {
+  background-color: #fffaf0;
+}
+
+.back-button {
+  grid-column: 1 / -1;
+  width: auto;
+  margin: 2rem auto 0;
+  padding: 0.8rem 2rem;
+  background-color: transparent;
+  border: 1px solid #86868b;
+  border-radius: 980px;
+  color: #1d1d1f;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.back-button:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .selection-options {
+    grid-template-columns: 1fr;
+  }
+  
+  .selection-title {
+    font-size: 1.75rem;
+  }
+}
