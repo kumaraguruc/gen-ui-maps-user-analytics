@@ -29,8 +29,8 @@ const Dashboard: React.FC = () => {
   return (
     <div className={`dashboard ${hiding ? 'hiding' : ''}`}>
       <h1 className="gradient-text">Hello world!</h1>
-      <h2 className="gradient-text">Welcome to GenAI Dashboard</h2>
-      <p className="subtitle">Explore the power of generative AI analytics</p>
+      <h2 className="gradient-text">Welcome to GenUI Dashboard</h2>
+      <p className="subtitle">Explore the power of generative UI with Maps analytics</p>
     </div>
   );
 };

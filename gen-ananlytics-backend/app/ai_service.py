@@ -12,7 +12,7 @@ client = OpenAI(
     base_url="https://floodgate.g.apple.com/api/openai/v1",
     api_key=os.getenv("OPENAI_API_KEY"),
     default_headers={
-      "Authorization": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImtpZDEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2lkbXNhYy5hcHBsZS5jb20iLCJhdWQiOiJodnlzM2Zjd2N0ZXFydnczcXprdnRrODZ2aXVvcXYiLCJleHAiOjE3NTU3NzE5MDMsImp0aSI6IjhoaUpwdEZ3bU9FTGU1MDNvM3M5X3ciLCJpYXQiOjE3NTU3NjgzMDMsInN1YiI6IjIzMjAyNjIyNzkiLCJkc2lkIjoyMzIwMjYyMjc5LCJncm91cHMiOlsxMzQzODk2NCwxMzU1NDY4MywxMjYzODg4M10sImNsaWVudF90eXBlIjoxMCwidHlwZSI6Im9wZW5pZCIsImdpdmVuX25hbWUiOiJHaXJpIiwibm9uY2UiOiI0TUU5MC9BTTNFL0MwO0lMMU1CPzBRQT1BTDZSQ0ozVDg3ODVIL0xPQT9fOENGRjhIL0c9QlJKOTw7MzJMQzwzLzFDSEk9PjlHN1M7LjVPRTNBPDdQSUU5PlJJOT1VM0M5PE4yRDM9Szs_NUIxNEEvQ1M7TURLP0U8VTw2LjtGLiIsInByc190eXBlIjoxLCJuYmYiOjE3NTU3NjgyNDMsImFjY291bnRuYW1lIjoiZ2lyaV9kb3JuYWxhIiwiYXpwIjoiaHZ5czNmY3djdGVxcnZ3M3F6a3Z0azg2dml1b3F2Iiwic3VibiI6ImRzaWQiLCJuYW1lIjoiR2lyaSBEb3JuYWxhIiwibmlja25hbWUiOiJHaXJpIiwic2Vzc2lvbl90eXBlIjoiRVNBIiwiYXBwX2lkIjo5MjgxNDgsImZhbWlseV9uYW1lIjoiRG9ybmFsYSJ9.rDbyIwg-HDTe0KbCiTi1pPsAD6GZG4kjy2TAbsZ7hSQxRaoj446KYtni-4qJUwwvrChGfftVKbN2quexxZtxhynG_gAk1d7yHCUoQ5hlT5F6Erw1MDF7eQzjiyU-MH753Tx7KGrC8bycx-pSIddAJ0cbv7yvgxBpOsFBdfcRQV0OtC_R3A2PUAd0KKLtEoZSrHZFaso63xmr5FGfW29cdtL87KeU1LQc8LfNglpfGEaulwQxxawTQB9Av1NfsaFq0KVx9TpWaeQcNVA_h2gXxFIWZewOTeVD10bqrwFESUDNM_4mLhM3GlYSnshyTlYFvobJJVCaVK5qrVW_J62aow"
+      "Authorization": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImtpZDEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2lkbXNhYy5hcHBsZS5jb20iLCJhdWQiOiJodnlzM2Zjd2N0ZXFydnczcXprdnRrODZ2aXVvcXYiLCJleHAiOjE3NTU4NDMyMjcsImp0aSI6InV6N1pZNGllUUI2M2ZnaEMyVXBZeFEiLCJpYXQiOjE3NTU4Mzk2MjcsInN1YiI6IjIzMjA1NzkyOTIiLCJkc2lkIjoyMzIwNTc5MjkyLCJncm91cHMiOlsxMjYzODg4MywxMzU1NDY4MywxMzQzODk2NF0sImNsaWVudF90eXBlIjoxMCwidHlwZSI6Im9wZW5pZCIsImdpdmVuX25hbWUiOiJLdW1hcmEiLCJ0b2tlbl90eXBlIjoiSSIsIm5vbmNlIjoiSjcxPj9UUjM5Qk1TR0g3OzxJPDtVRzdNPjg3Ny9QMTg2NC5INjtPUEVFOUE1Pk4zTFAzPD8wTElASTBMODFTMkI1S0JKRi9FOEo3Ry4-QTA4SUtNPUhPNC5EPExUTUYzNzIyVTVEMU9OUjUxMlE3NUVMQTNPN0cvSTBCOThRM0AiLCJwcnNfdHlwZSI6NCwid2lmaV9pcCI6IjEyMi4xNzcuMjQ3LjEyMCIsIm5iZiI6MTc1NTgzOTU2NywiYWNjb3VudG5hbWUiOiJrdW1hcmFfZ3VydSIsImF6cCI6Imh2eXMzZmN3Y3RlcXJ2dzNxemt2dGs4NnZpdW9xdiIsInN1Ym4iOiJkc2lkIiwibmFtZSI6Ikt1bWFyYSBHdXJ1Iiwibmlja25hbWUiOiJLdW1hcmEiLCJzZXNzaW9uX3R5cGUiOiJFU0EiLCJhcHBfaWQiOjkyODE0OCwiZmFtaWx5X25hbWUiOiJHdXJ1In0.AOTSOeUGlXloGWWPZzAHNxIoOzeKfjjAwj1bGqxI44TEb2ogQr_apoiTW9kXp9F8PI99TNe7w3rTw_Z_V6Ff2bQMPHCE2BB4i4r4REQAO1HRo7u99mEEQqJkrNPDanP_ufGrABR-1HDO2kaa6Yjf90goClIWYw_CpSom0QVE3xtumEwgp6pj11qdEtpztEBcIdXnz5uOGO3bCEpnF4RlOoSJm7jrAbszJu_DvN8hDYyHFvsW9GHKvLVhdfx_iWVXN41-1B0yAqwuO3dKM_Am9EnOVnaO5CymG23resWWaasFP5RUFxcPW61absRqvFmnM9unQcYQpxe_CBKCyK-lYQ"
     }
 )
 
@@ -27,7 +27,7 @@ PROFILE_DESCRIPTIONS = {
     }
 }
 
-async def generate_user_profile_data(
+def generate_user_profile_data(
     profile_type: Literal["commuter", "tourist", "driver"],
     vehicle_type: Optional[Literal["ev", "car", "bike"]] = None,
     location: Optional[Dict[str, float]] = None
@@ -78,8 +78,8 @@ async def generate_user_profile_data(
           "type": "bar" or "line" or "pie" or "area",
           "title": "Chart title",
           "data": [
-            {{"label": "Label 1", "value": numeric_value}},
-            {{"label": "Label 2", "value": numeric_value}}
+            {{"label": "Label 1", "value": numeric_value, "unit": "appropriate unit (e.g., 'km', '%', 'hours')"}},
+            {{"label": "Label 2", "value": numeric_value, "unit": "appropriate unit (e.g., 'km', '%', 'hours')"}}
           ]
         }}
       ],
@@ -93,9 +93,9 @@ async def generate_user_profile_data(
     """
     
     try:
-        # Use the OpenAI client with gpt-4o-mini model
-        response = await client.chat.completions.create(  # Using the correct async method
-            model="gpt-4o-mini",  # Using the requested model
+        # Use the OpenAI client with Claude model
+        response = client.chat.completions.create(  # Using synchronous method
+            model="aws:anthropic.claude-3-5-sonnet-20241022-v2:0",
             messages=[
                 {"role": "system", "content": "You are a helpful assistant that generates JSON data for a maps and analytics application."},
                 {"role": "user", "content": prompt}
@@ -156,9 +156,9 @@ def generate_fallback_data(profile_type, vehicle_type=None, location=None):
                     "type": "bar",
                     "title": "Travel Time by Hour",
                     "data": [
-                        {"label": "8 AM", "value": 45},
-                        {"label": "12 PM", "value": 25},
-                        {"label": "5 PM", "value": 50}
+                        {"label": "8 AM", "value": 45, "unit": "min"},
+                        {"label": "12 PM", "value": 25, "unit": "min"},
+                        {"label": "5 PM", "value": 50, "unit": "min"}
                     ]
                 }
             ],
@@ -184,9 +184,9 @@ def generate_fallback_data(profile_type, vehicle_type=None, location=None):
                     "type": "pie",
                     "title": "Cost Breakdown",
                     "data": [
-                        {"label": "Food", "value": 30},
-                        {"label": "Attractions", "value": 45},
-                        {"label": "Transport", "value": 25}
+                        {"label": "Food", "value": 30, "unit": "%"},
+                        {"label": "Attractions", "value": 45, "unit": "%"},
+                        {"label": "Transport", "value": 25, "unit": "%"}
                     ]
                 }
             ],
@@ -212,8 +212,8 @@ def generate_fallback_data(profile_type, vehicle_type=None, location=None):
                         "type": "bar",
                         "title": "Charging Stations by Type",
                         "data": [
-                            {"label": "Fast Charger", "value": 3},
-                            {"label": "Level 2", "value": 8}
+                            {"label": "Fast Charger", "value": 3, "unit": "stations"},
+                            {"label": "Level 2", "value": 8, "unit": "stations"}
                         ]
                     }
                 ],
@@ -237,8 +237,8 @@ def generate_fallback_data(profile_type, vehicle_type=None, location=None):
                         "type": "bar",
                         "title": "Fuel Types Available",
                         "data": [
-                            {"label": "Petrol", "value": 60},
-                            {"label": "Diesel", "value": 40}
+                            {"label": "Petrol", "value": 60, "unit": "%"},
+                            {"label": "Diesel", "value": 40, "unit": "%"}
                         ]
                     }
                 ],
@@ -262,9 +262,9 @@ def generate_fallback_data(profile_type, vehicle_type=None, location=None):
                         "type": "line",
                         "title": "Elevation Profile",
                         "data": [
-                            {"label": "0 km", "value": 10},
-                            {"label": "2 km", "value": 25},
-                            {"label": "4 km", "value": 15}
+                            {"label": "0 km", "value": 10, "unit": "m"},
+                            {"label": "2 km", "value": 25, "unit": "m"},
+                            {"label": "4 km", "value": 15, "unit": "m"}
                         ]
                     }
                 ],

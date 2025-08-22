@@ -19,6 +19,7 @@ export interface MapData {
 export interface ChartDataPoint {
   label: string;
   value: number;
+  unit?: string; // Optional unit for the value (e.g., "km", "%", "hours")
 }
 
 export interface Chart {

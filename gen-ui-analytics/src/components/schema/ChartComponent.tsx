@@ -6,6 +6,7 @@ import {
   AreaChart, Area,
   XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer
 } from 'recharts';
+import type { TooltipProps } from 'recharts';
 import type { Chart, ChartDataPoint } from '../../types/schema';
 
 interface ChartComponentProps {
@@ -36,7 +37,30 @@ const ChartComponent: React.FC<ChartComponentProps> = ({ chart, className = '' }
   const data = chart.data.map((item: ChartDataPoint) => ({
     name: item.label,
     value: item.value,
+    unit: item.unit || '', // Include unit if available
   }));
+
+  // Custom tooltip component to display value with unit
+  const CustomTooltip: React.FC<TooltipProps<number, string>> = ({ active, payload }) => {
+    if (active && payload && payload.length) {
+      const dataPoint = payload[0].payload;
+      return (
+        <div className="custom-tooltip" style={{
+          backgroundColor: 'white',
+          padding: '10px',
+          borderRadius: '12px',
+          border: 'none',
+          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)'
+        }}>
+          <p className="label" style={{ margin: '0', fontWeight: 'bold' }}>{`${dataPoint.name}`}</p>
+          <p className="value" style={{ margin: '5px 0 0' }}>
+            {`${payload[0].value}${dataPoint.unit ? ' ' + dataPoint.unit : ''}`}
+          </p>
+        </div>
+      );
+    }
+    return null;
+  };
 
   // Render different chart types based on the chart.type property
   const renderChart = () => {
@@ -63,13 +87,8 @@ const ChartComponent: React.FC<ChartComponentProps> = ({ chart, className = '' }
                 tickLine={{ stroke: '#e5e5ea' }}
                 axisLine={{ stroke: '#e5e5ea' }}
               />
-              <Tooltip 
-                contentStyle={{ 
-                  backgroundColor: 'white', 
-                  borderRadius: '12px',
-                  border: 'none',
-                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)'
-                }}
+              <Tooltip
+                content={<CustomTooltip />}
               />
               <Bar dataKey="value" fill="#0071e3" radius={[4, 4, 0, 0]} />
             </BarChart>
@@ -98,13 +117,8 @@ const ChartComponent: React.FC<ChartComponentProps> = ({ chart, className = '' }
                 tickLine={{ stroke: '#e5e5ea' }}
                 axisLine={{ stroke: '#e5e5ea' }}
               />
-              <Tooltip 
-                contentStyle={{ 
-                  backgroundColor: 'white', 
-                  borderRadius: '12px',
-                  border: 'none',
-                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)'
-                }}
+              <Tooltip
+                content={<CustomTooltip />}
               />
               <Line 
                 type="monotone" 
@@ -139,13 +153,8 @@ const ChartComponent: React.FC<ChartComponentProps> = ({ chart, className = '' }
                   <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                 ))}
               </Pie>
-              <Tooltip 
-                contentStyle={{ 
-                  backgroundColor: 'white', 
-                  borderRadius: '12px',
-                  border: 'none',
-                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)'
-                }}
+              <Tooltip
+                content={<CustomTooltip />}
               />
               <Legend 
                 layout="horizontal" 
@@ -179,13 +188,8 @@ const ChartComponent: React.FC<ChartComponentProps> = ({ chart, className = '' }
                 tickLine={{ stroke: '#e5e5ea' }}
                 axisLine={{ stroke: '#e5e5ea' }}
               />
-              <Tooltip 
-                contentStyle={{ 
-                  backgroundColor: 'white', 
-                  borderRadius: '12px',
-                  border: 'none',
-                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)'
-                }}
+              <Tooltip
+                content={<CustomTooltip />}
               />
               <Area 
                 type="monotone" 

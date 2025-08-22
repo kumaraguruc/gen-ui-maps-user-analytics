@@ -45,7 +45,7 @@ async def get_user_profile(request: UserProfileRequest):
             )
         
         # Generate profile data using AI service
-        profile_data = await generate_user_profile_data(
+        profile_data = generate_user_profile_data(
             profile_type=request.profile_type,
             vehicle_type=request.vehicle_type,
             location=request.location
@@ -105,7 +105,7 @@ async def get_profile_by_type(
             location = {"lat": lat, "lng": lng}
         
         # Generate profile data using AI service
-        profile_data = await generate_user_profile_data(
+        profile_data = generate_user_profile_data(
             profile_type=profile_type,
             vehicle_type=vehicle_type,
             location=location
